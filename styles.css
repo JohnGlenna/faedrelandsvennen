@@ -1,15 +1,17 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
     background-color: #f4f4f4;
     margin: 0;
-    padding: 20px;
+    padding: 0;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 
 .content-container {
     max-width: 800px;
     width: 100%;
+    padding: 20px;
 }
 
 .logo-container {
@@ -53,6 +55,7 @@ p {
 
 .city-selection-container {
     width: 100%;
+    margin-bottom: 20px;
 }
 
 .city-selection-label {
@@ -65,13 +68,13 @@ p {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 10px; /* Reduced margin to place Norge box closer */
 }
 
 .city-box {
     background-color: #fff; /* White background */
     color: #333;
-    padding: 10px 20px;
+    padding: 10px;
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, border-width 0.3s ease;
@@ -80,9 +83,21 @@ p {
     box-sizing: border-box;
     border: 2px solid #ccc;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     font-weight: 600; /* Semibold */
+}
+
+.city-box img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.city-box span {
+    margin-top: 10px;
 }
 
 .city-box:hover {
@@ -93,6 +108,19 @@ p {
 .city-box.active {
     border-color: #333;
     border-width: 3px; /* Smaller outline */
+}
+
+.norge-box {
+    flex: 1 1 calc(100% - 10px); /* Full width */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    margin-top: 10px; /* Add some margin to space it from other boxes */
+}
+
+.norge-box span {
+    margin: 0; /* Ensure no extra margin */
 }
 
 .city-dropdown {
@@ -143,9 +171,26 @@ p {
     margin-bottom: 10px;
 }
 
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    width: 100%;
+    margin-top: 20px;
+}
+
+footer p {
+    margin: 0;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .city-box {
+        flex: 1 1 calc(50% - 10px); /* Two columns on smaller screens */
+    }
+
+    .norge-box {
         flex: 1 1 calc(50% - 10px); /* Two columns on smaller screens */
     }
 }
@@ -153,6 +198,10 @@ p {
 @media (max-width: 480px) {
     .city-selection {
         display: none; /* Hide city boxes on mobile screens */
+    }
+
+    .norge-box {
+        display: none; /* Hide Norge box on mobile screens */
     }
 
     .city-dropdown {
