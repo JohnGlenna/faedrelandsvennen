@@ -5,14 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eiendomsmarkedstrender</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="content-container">
         <div class="logo-container">
-            <a href="https://www.fvn.no/" target="_blank">
-                <img src="img/fædrelandsvennen.png" alt="Fædrelandsvennen Logo" class="logo-outside">
-            </a>
+            <img src="img/fædrelandsvennen.png" alt="Fædrelandsvennen Logo" class="logo-outside">
         </div>
         <article class="article-container">
             <header class="article-header">
@@ -24,33 +21,13 @@
             <div class="city-selection-container">
                 <p class="city-selection-label">Velg en by:</p>
                 <div class="city-selection">
-                    <div class="city-box" onclick="updateData('Oslo')">
-                        <img src="img/oslo.jpg" alt="Oslo">
-                        <span>Oslo</span>
-                    </div>
-                    <div class="city-box" onclick="updateData('Bergen')">
-                        <img src="img/bergen.jpg" alt="Bergen">
-                        <span>Bergen</span>
-                    </div>
-                    <div class="city-box" onclick="updateData('Trondheim')">
-                        <img src="img/trondheim.jpg" alt="Trondheim">
-                        <span>Trondheim</span>
-                    </div>
-                    <div class="city-box" onclick="updateData('Stavanger m/omegn')">
-                        <img src="img/stavanger.jpg" alt="Stavanger m/omegn">
-                        <span>Stavanger m/omegn</span>
-                    </div>
-                    <div class="city-box" onclick="updateData('Kristiansand m/omegn')">
-                        <img src="img/kristiansand.jpg" alt="Kristiansand m/omegn">
-                        <span>Kristiansand m/omegn</span>
-                    </div>
-                    <div class="city-box" onclick="updateData('Tromsø')">
-                        <img src="img/tromso.jpg" alt="Tromsø">
-                        <span>Tromsø</span>
-                    </div>
-                </div>
-                <div class="norge-box city-box" onclick="updateData('Norge')">
-                    <span>Norge</span>
+                    <div class="city-box" onclick="updateData('Oslo')">Oslo</div>
+                    <div class="city-box" onclick="updateData('Bergen')">Bergen</div>
+                    <div class="city-box" onclick="updateData('Trondheim')">Trondheim</div>
+                    <div class="city-box" onclick="updateData('Stavanger m/omegn')">Stavanger m/omegn</div>
+                    <div class="city-box" onclick="updateData('Kristiansand m/omegn')">Kristiansand m/omegn</div>
+                    <div class="city-box" onclick="updateData('Tromsø')">Tromsø</div>
+                    <div class="city-box" onclick="updateData('Norge')">Norge</div>
                 </div>
                 <div class="city-dropdown">
                     <select id="city-select" onchange="updateData(this.value)">
@@ -70,9 +47,6 @@
             </div>
         </article>
     </div>
-    <footer>
-        <p>© 2024 Fædrelandsvennen</p>
-    </footer>
     <script src="script.js"></script>
 </body>
 </html>
