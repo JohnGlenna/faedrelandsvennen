@@ -1,92 +1,161 @@
-/* styles.css */
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
     margin: 0;
-    padding: 0;
+    padding: 20px;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #f4f4f9;
+    justify-content: center;
 }
 
-header {
-    background-color: #ffffff;
-    color: #333333;
-    width: 100%;
-    text-align: center;
-    padding: 1em 0;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 2em;
-    width: 90%;
+.content-container {
     max-width: 800px;
+    width: 100%;
 }
 
-.controls {
-    margin: 1em 0;
-    width: 100%;
+.logo-container {
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    background: white;
-    padding: 1em;
-    border-radius: 5px;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+}
+
+.logo-outside {
+    width: 150px; /* Adjust as needed */
+    height: auto;
+}
+
+.article-container {
+    width: 100%;
+    background-color: #fff;
+    padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden; /* Ensure content doesn't overflow */
 }
 
-label {
-    margin-bottom: 0.5em;
-    font-weight: bold;
+.article-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
 }
 
-#city-selector, #data-field-selector {
+h1 {
+    text-align: left;
+    color: #333;
+    margin: 0;
+    font-size: 24px;
+}
+
+p {
+    text-align: left;
+    color: #666;
+    line-height: 1.6;
+}
+
+.city-selection-container {
     width: 100%;
 }
 
-#data-field-selector {
+.city-selection-label {
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.city-selection {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
-    margin-top: 10px;
+    margin-bottom: 20px;
 }
 
-.radio-group {
+.city-box {
+    background-color: #fff; /* White background */
+    color: #333;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, border-width 0.3s ease;
+    flex: 1 1 calc(14% - 10px); /* Adjust for seven columns */
+    text-align: center;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
     display: flex;
+    justify-content: center;
     align-items: center;
-    background: #f9f9f9;
-    padding: 0.5em 1em;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+    font-weight: 600; /* Semibold */
 }
 
-.radio-group:hover {
-    background: #e0e0e0;
+.city-box:hover {
+    background-color: #ddd;
+    color: #000;
 }
 
-.radio-group input {
-    margin-right: 10px;
-    cursor: pointer;
+.city-box.active {
+    border-color: #333;
+    border-width: 3px; /* Smaller outline */
 }
 
-#data-display {
-    margin-top: 2em;
+.city-dropdown {
+    display: none;
+    margin-bottom: 20px;
+}
+
+#city-select {
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
     width: 100%;
-    background: white;
-    padding: 1em;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.5s ease, transform 0.5s ease;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
 }
 
-#data-display.visible {
-    opacity: 1;
-    transform: translateY(0);
+#city-select:hover, #city-select:focus {
+    border-color: #333;
+}
+
+.data-display {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align items to the left */
+    width: 100%; /* Ensure it fits within the container */
+    color: #333; /* Match text color with city boxes */
+}
+
+.data-item {
+    background-color: #fff; /* White background */
+    padding: 10px;
+    margin: 5px 0; /* Adjust margin to avoid overflow */
+    width: 100%; /* Ensure it fits within the container with padding considered */
+    text-align: left; /* Left-align text */
+    border-radius: 4px;
+    box-sizing: border-box; /* Ensure padding and border are included in the width */
+    font-size: 16px;
+    line-height: 1.6;
+    border: 2px solid #ccc;
+    font-weight: 400; /* Regular weight */
+}
+
+.city-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .city-box {
+        flex: 1 1 calc(50% - 10px); /* Two columns on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .city-selection {
+        display: none; /* Hide city boxes on mobile screens */
+    }
+
+    .city-dropdown {
+        display: block; /* Show dropdown on mobile screens */
+    }
 }

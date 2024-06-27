@@ -1,5 +1,4 @@
-// script.js
-const dataset = {
+const data = {
     "Oslo": {
         "Endring siste måned": 0.2,
         "Endring sesongjustert siste måned": 0.2,
@@ -72,32 +71,37 @@ const dataset = {
     }
 };
 
-document.addEventListener('DOMContentLoaded', () => {
-    const citySelector = document.getElementById('city-selector');
-    const dataFieldSelector = document.getElementById('data-field-selector');
-    const dataDisplay = document.getElementById('data-display');
+function updateData(city) {
+    const cityData = data[city];
+    const dataDisplay = document.getElementById("data-display");
+    const cityTitle = document.getElementById("city-title");
 
-    const updateDisplay = () => {
-        const city = citySelector.value;
-        const field = document.querySelector('input[name="data-field"]:checked').value;
-        const data = dataset[city][field];
-        dataDisplay.innerHTML = `
-            <h2>Data for ${city}</h2>
-            <p>${field}: ${data}</p>
-        `;
-        dataDisplay.classList.add('visible');
-    };
+    dataDisplay.innerHTML = "";
+    cityTitle.textContent = `Markedstrend i ${city}`;
 
-    citySelector.addEventListener('change', () => {
-        dataDisplay.classList.remove('visible');
-        setTimeout(updateDisplay, 500);
-    });
+    for (const [key, value] of Object.entries(cityData)) {
+        const dataItem = document.createElement("div");
+        dataItem.className = "data-item";
+        dataItem.textContent = `${key}: ${value}`;
+        dataDisplay.appendChild(dataItem);
+    }
 
-    dataFieldSelector.addEventListener('change', () => {
-        dataDisplay.classList.remove('visible');
-        setTimeout(updateDisplay, 500);
-    });
+    // Remove active class from all city boxes
+    const cityBoxes = document.querySelectorAll('.city-box');
+    cityBoxes.forEach(box => box.classList.remove('active'));
 
-    // Initial display
-    updateDisplay();
-});
+    // Add active class to the selected city box
+    const selectedCityBox = document.querySelector(`.city-box[onclick="updateData('${city}')"]`);
+    if (selectedCityBox) {
+        selectedCityBox.classList.add('active');
+    }
+
+    // Update the dropdown menu to match the selected city
+    const citySelect = document.getElementById("city-select");
+    citySelect.value = city;
+}
+
+// Initialize with default city
+window.onload = function() {
+    updateData('Oslo');
+};
