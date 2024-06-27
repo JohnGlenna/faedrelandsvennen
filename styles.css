@@ -189,6 +189,28 @@ footer p {
     .city-box {
         flex: 1 1 calc(50% - 10px); /* Two columns on smaller screens */
     }
+<<<<<<< HEAD
 
     .norge-box {
         flex: 1 1 calc(50% - 10px); /* Two columns on
+=======
+
+    .norge-box {
+        flex: 1 1 calc(50% - 10px); /* Two columns on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .city-selection {
+        display: none; /* Hide city boxes on mobile screens */
+    }
+
+    .norge-box {
+        display: none; /* Hide Norge box on mobile screens */
+    }
+
+    .city-dropdown {
+        display: block; /* Show dropdown on mobile screens */
+    }
+}
+>>>>>>> parent of ccd85f9 (Revert "Commit 3")
