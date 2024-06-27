@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real Estate Data Presentation</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Real Estate Data Presentation</h1>
+    </header>
+    <main>
+        <section class="controls">
+            <label for="city-selector">Select a city:</label>
+            <select id="city-selector">
+                <option value="Oslo">Oslo</option>
+                <option value="Bergen">Bergen</option>
+                <option value="Trondheim">Trondheim</option>
+                <option value="Stavanger m/omegn">Stavanger m/omegn</option>
+                <option value="Kristiansand m/omegn">Kristiansand m/omegn</option>
+                <option value="Tromsø">Tromsø</option>
+                <option value="Norge">Norge</option>
+            </select>
+        </section>
+        <section class="controls">
+            <label for="data-field-selector">Select data field:</label>
+            <div id="data-field-selector" class="data-field-container">
+                <div class="radio-group">
+                    <input type="radio" id="field-monthly" name="data-field" value="Endring siste måned" checked>
+                    <label for="field-monthly">Endring siste måned</label>
+                </div>
+                <div class="radio-group">
+                    <input type="radio" id="field-seasonal" name="data-field" value="Endring sesongjustert siste måned">
+                    <label for="field-seasonal">Endring sesongjustert siste måned</label>
+                </div>
+                <div class="radio-group">
+                    <input type="radio" id="field-year" name="data-field" value="Endring hittil i år">
+                    <label for="field-year">Endring hittil i år</label>
+                </div>
+                <div class="radio-group">
+                    <input type="radio" id="field-annual" name="data-field" value="Endring siste år">
+                    <label for="field-annual">Endring siste år</label>
+                </div>
+                <div class="radio-group">
+                    <input type="radio" id="field-5year" name="data-field" value="Endring siste 5 år">
+                    <label for="field-5year">Endring siste 5 år</label>
+                </div>
+                <div class="radio-group">
+                    <input type="radio" id="field-10year" name="data-field" value="Endring siste 10 år">
+                    <label for="field-10year">Endring siste 10 år</label>
+                </div>
+                <div class="radio-group">
+                    <input type="radio" id="field-avg-kvm" name="data-field" value="Gjennomsnitt kvm. pris">
+                    <label for="field-avg-kvm">Gjennomsnitt kvm. pris</label>
+                </div>
+                <div class="radio-group">
+                    <input type="radio" id="field-avg-price" name="data-field" value="Gjennomsnittspris">
+                    <label for="field-avg-price">Gjennomsnittspris</label>
+                </div>
+            </div>
+        </section>
+        <section id="data-display">
+            <!-- Data will be displayed here -->
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
