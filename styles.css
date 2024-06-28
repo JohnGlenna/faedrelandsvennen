@@ -1,10 +1,30 @@
-body {
-    font-family: 'Roboto', sans-serif;
-    background-color: #f4f4f4;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
     margin: 0;
     padding: 0;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Center content vertically */
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f4;
+    width: 100%;
+}
+
+.page-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100%;
     align-items: center;
 }
 
@@ -12,12 +32,24 @@ body {
     max-width: 800px;
     width: 100%;
     padding: 20px;
+    flex: 1; /* Allows content to grow and push footer to the bottom */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Center content vertically */
 }
 
 .logo-container {
     display: flex;
     justify-content: flex-start;
     margin-bottom: 20px;
+    position: sticky;
+    top: 0;
+    background-color: #f4f4f4;
+    z-index: 1000; /* Ensures the logo stays above other content */
+    width: 100%;
+    padding: 10px 20px; /* Adjust padding as needed */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: add a shadow for better visibility */
 }
 
 .logo-outside {
@@ -172,39 +204,30 @@ p {
 }
 
 footer {
-    background-color: #333;
+    background-color: #f1f1f1;
     color: #fff;
     text-align: center;
     padding: 10px 0;
-    width: 100%;
-    margin-top: 20px;
-}
-
-footer p {
-    margin: 0;
+    margin-top: auto; /* Ensure footer stays at the bottom */
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .city-box {
-        flex: 1 1 calc(50% - 10px); /* Two columns on smaller screens */
-    }
-
-    .norge-box {
-        flex: 1 1 calc(50% - 10px); /* Two columns on smaller screens */
-    }
+  .city-box {
+    flex: 1 1 calc(33.333% - 10px); /* Adjust for three columns */
+  }
 }
 
 @media (max-width: 480px) {
     .city-selection {
-        display: none; /* Hide city boxes on mobile screens */
+        display: none;
     }
 
     .norge-box {
-        display: none; /* Hide Norge box on mobile screens */
+        display: none;
     }
 
     .city-dropdown {
-        display: block; /* Show dropdown on mobile screens */
+        display: block;
     }
 }

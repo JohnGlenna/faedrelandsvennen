@@ -1,78 +1,106 @@
 <!DOCTYPE html>
 <html lang="no">
-<head>
+
+  <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
     <title>Eiendomsmarkedstrender</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600&display=swap" rel="stylesheet">
-</head>
-<body>
-    <div class="content-container">
+    <link rel="stylesheet"
+          href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600&display=swap"
+          rel="stylesheet">
+  </head>
+
+  <body>
+    <div class="page-container">
+      <div class="content-container">
         <div class="logo-container">
-            <a href="https://www.fvn.no/" target="_blank">
-                <img src="img/fædrelandsvennen.png" alt="Fædrelandsvennen Logo" class="logo-outside">
-            </a>
+          <a href="https://www.fvn.no/"
+             target="_blank">
+            <img src="img/fædrelandsvennen.png"
+                 alt="Fædrelandsvennen Logo"
+                 class="logo-outside">
+          </a>
         </div>
         <article class="article-container">
-            <header class="article-header">
-                <h1>Eiendomsmarkedstrender i store norske byer</h1>
-            </header>
-            <p>
-                Eiendomsmarkedet i Norge har vist betydelige endringer de siste månedene og årene. Denne interaktive visualiseringen gir en oversikt over markedstrendene i forskjellige byer. Velg en by for å se detaljerte statistikker om prisendringer og gjennomsnittspriser.
-            </p>
-            <div class="city-selection-container">
-                <p class="city-selection-label">Velg en by:</p>
-                <div class="city-selection">
-                    <div class="city-box" onclick="updateData('Oslo')">
-                        <img src="img/oslo.jpg" alt="Oslo">
-                        <span>Oslo</span>
-                    </div>
-                    <div class="city-box" onclick="updateData('Bergen')">
-                        <img src="img/bergen.jpg" alt="Bergen">
-                        <span>Bergen</span>
-                    </div>
-                    <div class="city-box" onclick="updateData('Trondheim')">
-                        <img src="img/trondheim.jpg" alt="Trondheim">
-                        <span>Trondheim</span>
-                    </div>
-                    <div class="city-box" onclick="updateData('Stavanger m/omegn')">
-                        <img src="img/stavanger.jpg" alt="Stavanger m/omegn">
-                        <span>Stavanger m/omegn</span>
-                    </div>
-                    <div class="city-box" onclick="updateData('Kristiansand m/omegn')">
-                        <img src="img/kristiansand.jpg" alt="Kristiansand m/omegn">
-                        <span>Kristiansand m/omegn</span>
-                    </div>
-                    <div class="city-box" onclick="updateData('Tromsø')">
-                        <img src="img/tromso.jpg" alt="Tromsø">
-                        <span>Tromsø</span>
-                    </div>
-                </div>
-                <div class="norge-box city-box" onclick="updateData('Norge')">
-                    <span>Norge</span>
-                </div>
-                <div class="city-dropdown">
-                    <select id="city-select" onchange="updateData(this.value)">
-                        <option value="Oslo">Oslo</option>
-                        <option value="Bergen">Bergen</option>
-                        <option value="Trondheim">Trondheim</option>
-                        <option value="Stavanger m/omegn">Stavanger m/omegn</option>
-                        <option value="Kristiansand m/omegn">Kristiansand m/omegn</option>
-                        <option value="Tromsø">Tromsø</option>
-                        <option value="Norge">Norge</option>
-                    </select>
-                </div>
+          <header class="article-header">
+            <h1>Eiendomsmarkedstrender i store norske byer</h1>
+          </header>
+          <p>
+            Eiendomsmarkedet i Norge har vist betydelige endringer de siste månedene og årene. Denne interaktive visualiseringen gir en oversikt over markedstrendene i forskjellige byer. Velg en by
+            for å se detaljerte statistikker om prisendringer og gjennomsnittspriser.
+          </p>
+          <div class="city-selection-container">
+            <p class="city-selection-label">Velg en by:</p>
+            <div class="city-selection">
+              <div class="city-box"
+                   onclick="updateData('Oslo')">
+                <img src="img/oslo.jpg"
+                     alt="Oslo">
+                <span>Oslo</span>
+              </div>
+              <div class="city-box"
+                   onclick="updateData('Bergen')">
+                <img src="img/bergen.jpg"
+                     alt="Bergen">
+                <span>Bergen</span>
+              </div>
+              <div class="city-box"
+                   onclick="updateData('Trondheim')">
+                <img src="img/trondheim.jpg"
+                     alt="Trondheim">
+                <span>Trondheim</span>
+              </div>
+              <div class="city-box"
+                   onclick="updateData('Stavanger m/omegn')">
+                <img src="img/stavanger.jpg"
+                     alt="Stavanger m/omegn">
+                <span>Stavanger m/omegn</span>
+              </div>
+              <div class="city-box"
+                   onclick="updateData('Kristiansand m/omegn')">
+                <img src="img/kristiansand.jpg"
+                     alt="Kristiansand m/omegn">
+                <span>Kristiansand m/omegn</span>
+              </div>
+              <div class="city-box"
+                   onclick="updateData('Tromsø')">
+                <img src="img/tromso.jpg"
+                     alt="Tromsø">
+                <span>Tromsø</span>
+              </div>
             </div>
-            <div id="city-title" class="city-title"></div>
-            <div id="data-display" class="data-display">
-                <!-- Data will be displayed here -->
+            <div class="norge-box city-box"
+                 onclick="updateData('Norge')">
+              <span>Norge</span>
             </div>
+            <div class="city-dropdown">
+              <select id="city-select"
+                      onchange="updateData(this.value)">
+                <option value="Oslo">Oslo</option>
+                <option value="Bergen">Bergen</option>
+                <option value="Trondheim">Trondheim</option>
+                <option value="Stavanger m/omegn">Stavanger m/omegn</option>
+                <option value="Kristiansand m/omegn">Kristiansand m/omegn</option>
+                <option value="Tromsø">Tromsø</option>
+                <option value="Norge">Norge</option>
+              </select>
+            </div>
+          </div>
+          <div id="city-title"
+               class="city-title"></div>
+          <div id="data-display"
+               class="data-display">
+            <!-- Data will be displayed here -->
+          </div>
         </article>
-    </div>
-    <footer>
+      </div>
+      <footer>
         <p>© 2024 Fædrelandsvennen</p>
-    </footer>
+      </footer>
+    </div>
     <script src="script.js"></script>
-</body>
+  </body>
+
 </html>
