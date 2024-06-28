@@ -180,7 +180,6 @@ footer {
     margin-top: 20px;
 }
 
-
 footer p {
     margin: 0;
 }
@@ -190,9 +189,6 @@ footer p {
     .city-box {
         flex: 1 1 calc(50% - 10px); /* Two columns on smaller screens */
     }
-
-    .norge-box {
-        flex: 1 1 calc(50% - 10px); /* Two columns on
 
     .norge-box {
         flex: 1 1 calc(50% - 10px); /* Two columns on smaller screens */
