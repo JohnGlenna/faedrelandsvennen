@@ -189,11 +189,9 @@ footer p {
     .city-box {
         flex: 1 1 calc(50% - 10px); /* Two columns on smaller screens */
     }
-<<<<<<< HEAD
 
     .norge-box {
         flex: 1 1 calc(50% - 10px); /* Two columns on
-=======
 
     .norge-box {
         flex: 1 1 calc(50% - 10px); /* Two columns on smaller screens */
@@ -213,4 +211,3 @@ footer p {
         display: block; /* Show dropdown on mobile screens */
     }
 }
->>>>>>> parent of ccd85f9 (Revert "Commit 3")
