@@ -71,6 +71,7 @@ const data = {
     }
 };
 
+
 function updateData(city) {
     const cityData = data[city];
     const dataDisplay = document.getElementById("data-display");
